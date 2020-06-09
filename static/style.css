@@ -1,4 +1,17 @@
+p {
+  text-align: justify !important;
+}
+
 a {
-    text-decoration: none;
-    color: var(--accent);
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.post,
+.post-title {
+  margin-top: 0 !important;
+}
+
+.post-cover {
+  border: 10px solid var(--accent);
 }

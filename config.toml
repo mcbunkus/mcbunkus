@@ -6,14 +6,14 @@ disqusShortname = "beau-blog"
 
 [params]
   contentTypeName = "post"
-  themeColor = "blue"
-  showMenuItems = 3
+  themeColor = "red"
+  showMenuItems = 5
   fullWidthTheme = false
   centerTheme = true
 
 [languages]
   [languages.en]
-    title = "Mon Blog"
+    title = "Blog"
     subtitle = "A simple, retro theme for Hugo"
     keywords = ""
     copyright = ""
@@ -22,7 +22,7 @@ disqusShortname = "beau-blog"
     readOtherPosts = "Read other posts"
 
     [languages.en.params.logo]
-      logoText = "# blog"
+      logoText = "# Blog"
       logoHomeLink = "/"
 
   [languages.en.menu]
