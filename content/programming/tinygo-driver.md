@@ -3,7 +3,7 @@ title: 'TinyGo'
 date: '2020-06-08'
 author: 'Austen LeBeau'
 cover: 'images/programming/tinygo-logo.png'
-description: 'An introduction to TinyGo, and sensor driver development.'
+description: 'An introduction to TinyGo, and I&sup2;C sensor driver development.'
 type: post
 ---
 
