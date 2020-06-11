@@ -6,14 +6,14 @@ disqusShortname = "beau-blog"
 
 [params]
   contentTypeName = "post"
-  themeColor = "blue"
+  themeColor = "green"
   showMenuItems = 5
   fullWidthTheme = false
   centerTheme = true
 
 [languages]
   [languages.en]
-    title = "An Engineer's Blog"
+    title = "An Engineering Blog"
     subtitle = ""
     keywords = ""
     copyright = "&copy; 2020 Austen LeBeau"
