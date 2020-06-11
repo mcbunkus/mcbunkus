@@ -13,7 +13,7 @@ disqusShortname = "beau-blog"
 
 [languages]
   [languages.en]
-    title = "An Engineering Blog"
+    title = "agentbaxx"
     subtitle = ""
     keywords = ""
     copyright = "&copy; 2020 Austen LeBeau"
@@ -22,7 +22,7 @@ disqusShortname = "beau-blog"
     readOtherPosts = "Read other posts"
 
     [languages.en.params.logo]
-      logoText = "An Engineer's Blog"
+      logoText = "agentbaxx"
       logoHomeLink = "/"
 
   [languages.en.menu]
