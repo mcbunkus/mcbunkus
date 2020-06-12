@@ -10,13 +10,13 @@ math: true
 
 
 The Kalman filter is one of the most important algorithms in engineering, but
-even as an aerospace undergrad It wasn't until I took
-a state estimation class as an extracurricular before I really understood it.
-Before I took the class, I tried to use it in a project for USLI, but the
-resources online didn't make much sense. A lot of material does a good job of
-explaining all the bits and pieces, but they don't do a good job of using it in
-examples. So, here's how the filter works in plain english, and a couple of
-examples you can look at to give you an idea of how it works and how to use it.
+even as an aerospace undergrad It wasn't until I took a state estimation class
+as an extracurricular before I really understood it. Before I took the class, I
+tried to use it in a project for USLI, but the resources online didn't make much
+sense. A lot of material does a good job of explaining all the bits and pieces,
+but they don't do a good job of using it in examples. So, here's how the filter
+works in plain english, and a couple of examples you can look at to give you an
+idea of how it works and how to use it.
 
 _What is a Kalman filter?_
 
