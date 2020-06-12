@@ -8,6 +8,8 @@ type: post
 math: true
 ---
 
+{{<toc>}}
+
 The Kalman filter is one of the most important algorithms in engineering. But as an aerospace
 undegrad, the most exposure I got to it was a 15 minute PowerPoint presentation. It wasn't until I
 took a state estimation class as an extracurricular before I really understood it. Before I took the
@@ -52,7 +54,7 @@ filter. $R$ is something you can get from the specs of the sensor. For $P$, you 
 guess as to what the values are, but as you'll see it doesn't matter too much. The filter changes
 the covariance of $P$ until it converges to the true value.
 
-# Algorithm
+## Algorithm
 
 You've probably seen something like this before...
 
@@ -98,11 +100,15 @@ step, $k|k$ is the current iteration, and $k+1|k$ is the next.
 _The $k+1|k$ values become $k|k-1$ values in the next iteration, not the $k|k$
 values._
 
-This is the part that confused me at first. 
+This is the part that confused me at first. $\hat{x}_{k|k}$ and $P_{k|k}$ are
+used for _predicting_ the state in the time update equations. They're not the
+actual estimate.
 
-# Examples
+## Examples
 
-Here's a simple 3-state example.
+Here's a simple 3-state example. The measurements are for an airplane flying downrange in
+straight and level unaccelerated flight. It is not accelerating or changing
+course, so the acceleration should be zero and the velocity constant.
 
 ```python
 # Make sure you have python3, numpy, and matplotlib installed!

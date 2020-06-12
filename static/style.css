@@ -16,6 +16,11 @@ a {
   border: 10px solid var(--accent);
 }
 
+
+h1 {
+  color: var(--accent);
+}
+
 /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
