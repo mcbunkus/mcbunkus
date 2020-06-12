@@ -5,6 +5,7 @@ author: 'Austen LeBeau'
 cover: 'images/programming/tinygo-logo.png'
 description: 'An introduction to TinyGo, and I&sup2;C sensor driver development.'
 type: post
+tags: ['go', 'tinygo', 'drivers']
 ---
 
 I've done a lot of projects with microcontrollers before, but Arduino makes it too easy. I did a lot

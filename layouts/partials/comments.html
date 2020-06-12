@@ -1,1 +1,1 @@
-{{ template "_internal/disqus.html" . }}
+{{ if ne .File.Dir "/" }} {{ template "_internal/disqus.html" . }} {{ end }}
