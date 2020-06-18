@@ -8,8 +8,10 @@ type: post
 math: true
 ---
 
-The Kalman filter is one of the most important algorithms in engineering. That said, as an aerospace
-undegrad the most exposure I got to it was a 15 minute PowerPoint presentation. It wasn't until I
+{{<toc>}}
+
+The Kalman filter is one of the most important algorithms in engineering. But as an aerospace
+undegrad, the most exposure I got to it was a 15 minute PowerPoint presentation. It wasn't until I
 took a state estimation class as an extracurricular before I really understood it. Before I took the
 class, I tried to use a Kalman filter in a project for
 [USLI](https://www.nasa.gov/stem/studentlaunch/home/index.html), but the resources online didn't
@@ -52,7 +54,7 @@ filter. $R$ is something you can get from the specs of the sensor. For $P$, you 
 guess as to what the values are, but as you'll see it doesn't matter too much. The filter changes
 the covariance of $P$ until it converges to the true value.
 
-# Algorithm
+## Algorithm
 
 You've probably seen something like this before...
 
@@ -90,9 +92,23 @@ These equations make up the classic linear Kalman filter, and the algorithm runs
 equations in this order. Every variable in these equations is a matrix, but they don't _have_ to be.
 If you have just one state, then these variables are just scalars.
 
-# Examples
+The subscripts are important here, and sometimes they're a source of confusion.
+Remember that the Kalman filter is a _recursive_ algorithm. It depends on
+previous data to make estimates. $k|k-1$ denotes values from the previous time
+step, $k|k$ is the current iteration, and $k+1|k$ is the next. 
 
-Here's a simple 3-state example.
+_The $k+1|k$ values become $k|k-1$ values in the next iteration, not the $k|k$
+values._
+
+This is the part that confused me at first. $\hat{x}_{k|k}$ and $P_{k|k}$ are
+used for _predicting_ the state in the time update equations. They're not the
+actual estimate.
+
+## Examples
+
+Here's a simple 3-state example. The measurements are for an airplane flying downrange in
+straight and level unaccelerated flight. It is not accelerating or changing
+course, so the acceleration should be zero and the velocity constant.
 
 ```python
 # Make sure you have python3, numpy, and matplotlib installed!

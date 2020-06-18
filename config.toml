@@ -2,7 +2,7 @@ baseurl = "/"
 languageCode = "en-us"
 theme = "terminal"
 paginate = 10
-disqusShortname = "beau-blog"
+disqusShortname = "agentbaxx"
 
 [params]
   contentTypeName = "post"
