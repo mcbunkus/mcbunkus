@@ -10,53 +10,65 @@ math: true
 
 {{<toc>}}
 
-The Kalman filter is one of the most important algorithms in engineering. But as an aerospace
-undegrad, the most exposure I got to it was a 15 minute PowerPoint presentation. It wasn't until I
-took a state estimation class as an extracurricular before I really understood it. Before I took the
-class, I tried to use a Kalman filter in a project for
-[USLI](https://www.nasa.gov/stem/studentlaunch/home/index.html), but the resources online didn't
-make much sense. A lot of the material you find online does a good job of explaining all the bits
-and pieces, but they don't do a good job of using it in examples. Sometimes there are edge cases
-that don't fit the standard examples. So, here's how the filter works in plain english, and a couple
-of examples you can look at to give you an idea of how it works and how to use it.
+I think Kalman filters are one of the most underappreciated topics in
+engineering. In my time as an aerospace undergrad, the most exposure I got was a
+15 minute PowerPoint presentation until I took a state estimation class my
+senior year. Before then, I tried to write a filter for the apogee control
+system in Auburn's
+[USLI](https://www.nasa.gov/stem/studentlaunch/home/index.html) competition
+rocket. However, the problem I ran in to was the fact that the examples online
+didn't work in the context I needed it to. They set up the simplest possible
+problem and use the standard way of tackling that problem that every other
+example uses. But sometimes you have a problem that doesn't fit that mold, and
+unless you already know how the filter works you're stuck.
 
-_What is a Kalman filter?_
+I will run you through the simplest possible example in case you've never seen
+the filter before. _Then I'm going to show you what to do if the example won't
+work for you._ There's only so much that I can cover in one blog post, but I
+hope it will be enough to point you in the right direction. 
 
-It is an _optimal linear state estimator_. In other words, it uses measurements to estimate the
-state of something. This something is typically called a "system", and a system could be an
-airplane, a rover, a drone, a car --- pretty much anything. The state of a system would be things
-like its speed, its altitude, how quickly it is accelerating, etc., and even things like its mass or
-temperature. Most of the time it's used for
-kinematics (a system's position, speed, and acceleration).
 
-You might be wondering, why not just use a sensor to measure something directly? Slap an altimeter
-on a plane and boom, you have its altitude. Why do you need to "estimate" the altitude? The problem
-is sensors are noisy.
+## Background
 
-{{< figure src="/images/programming/kalman/sensor-noise.png" position="center" >}}
+Let me back up a bit if you've never heard about the Kalman filter. It is an
+_optimal linear state estimator_. In other words, it uses measurements to
+estimate the state of something. This something is typically called a "system",
+and a system could be an airplane, a rover, a drone, a car --- pretty much
+anything. The state of a system would be things like its speed, its altitude,
+how quickly it is accelerating, etc., and even things like its mass or
+temperature. Most of the time it's used for kinematics (a system's position,
+speed, and acceleration).
 
-Here's an example of noisy sensor measurements (conveniently coupled with the Kalman filter's
-estimate). Also sometimes you can't measure a state directly. Imagine trying to
-measure the vertical speed of a drone. The only practical way is to measure the change in altitude vs
-change in time with an altimeter. Dividing the noise in the sensor measurements make the noise even
-worse, and makes your vertical speed "measurement" is unusable.
+You might be wondering, why not just use a sensor to measure something directly?
+Slap an altimeter on a plane and boom, you have its altitude. Why do you need to
+"estimate" the altitude? The problem is sensors are noisy.
+
+{{< figure src="/images/programming/kalman/sensor-noise.png" position="center">}}
+
+Here's an example of noisy sensor measurements (conveniently coupled with the
+Kalman filter's estimate). Also sometimes you can't measure a state directly.
+Imagine trying to measure the vertical speed of a drone. The only practical way
+is to measure the change in altitude vs change in time with an altimeter.
+Dividing the noise in the sensor measurements make the noise even worse, and
+makes your vertical speed "measurement" is unusable.
 
 _How does it work?_
 
-The Kalman filter uses equations that describe the state together with your measurements to estimate
-the true state. The equations _don't_ need to be a perfect representation of your system. Often
-times a good approximation will work just fine. However, to make these estimates the filter needs
-the _covariance_ of a few different "noises". An obvious "noise" is the sensor noise itself (often
-denoted as $R$). This is measurement (sometimes called observation) noise. However, there is also
-_process_ noise ($Q$) and _estimate_ noise ($P$). They're a bit hard to explain, but for now as far
-as you are concerned, $Q$ is a knob that you can tweak to change the performance of the
-filter. $R$ is something you can get from the specs of the sensor. For $P$, you can make an initial
-guess as to what the values are, but as you'll see it doesn't matter too much. The filter changes
-the covariance of $P$ until it converges to the true value.
+The Kalman filter uses equations that describe the state together with your
+measurements to estimate the true state. The equations _don't_ need to be a
+perfect representation of your system. Often times a good approximation will
+work just fine. However, to make these estimates the filter needs the
+_covariance_ of a few different "noises". An obvious "noise" is the sensor noise
+itself (often denoted as $R$). This is measurement (sometimes called
+observation) noise. However, there is also _process_ noise ($Q$) and _estimate_
+noise ($P$). They're a bit hard to explain, but for now as far as you are
+concerned, $Q$ is a knob that you can tweak to change the performance of the
+filter. $R$ is something you can get from the specs of the sensor. For $P$, you
+can make an initial guess as to what the values are, but as you'll see it
+doesn't matter too much. The filter changes the covariance of $P$ until it
+converges to the true value.
 
 ## Algorithm
-
-You've probably seen something like this before...
 
 _Measurement Update Equations_
 
@@ -88,23 +100,22 @@ $$
 \end{aligned}
 $$
 
-These equations make up the classic linear Kalman filter, and the algorithm runs through these
-equations in this order. Every variable in these equations is a matrix, but they don't _have_ to be.
-If you have just one state, then these variables are just scalars.
+These equations make up the classic linear Kalman filter, and the algorithm runs
+through these equations in this order. Every variable in these equations is a
+matrix, but they don't _have_ to be. If you have just one state, then these
+variables are just scalars. The subscripts are important here, and sometimes
+they're a source of confusion. Remember that the Kalman filter is a _recursive_
+algorithm. It depends on previous data to make estimates. $k|k-1$ denotes values
+from the previous time step, $k|k$ is the current iteration, and $k+1|k$ is the
+next. 
 
-The subscripts are important here, and sometimes they're a source of confusion.
-Remember that the Kalman filter is a _recursive_ algorithm. It depends on
-previous data to make estimates. $k|k-1$ denotes values from the previous time
-step, $k|k$ is the current iteration, and $k+1|k$ is the next. 
-
-_The $k+1|k$ values become $k|k-1$ values in the next iteration, not the $k|k$
-values._
+_The $k+1|k$ values become $k|k-1$ values in the next iteration, not the $k|k$ values._
 
 This is the part that confused me at first. $\hat{x}_{k|k}$ and $P_{k|k}$ are
 used for _predicting_ the state in the time update equations. They're not the
-actual estimate.
+actual estimate, but correct me if I'm wrong anywhere.
 
-## Examples
+## Simplest Example
 
 Here's a simple 3-state example. The measurements are for an airplane flying downrange in
 straight and level unaccelerated flight. It is not accelerating or changing
@@ -117,16 +128,18 @@ import matplotlib.pyplot as plt
 from numpy import array, identity, loadtxt, vstack
 from numpy.linalg import inv
 
+plt.style.use("dark_background")
+
 data = loadtxt("data.txt", delimiter="\t")
 
 time = data[:, 0]
 measurements = data[:, 1]
 dt = time[1] - time[0]
 
-X = array([[measurements[0]], [0], [0]])            # State vector
-H = array([[1, 0, 0]])                              # Measurement matrix
-P = array([[1, 0, 0], [0, 10, 0], [0, 0, 100]])     # Estimate noise
-Q = array([[0, 0, 0], [0, 0, 0], [0, 0, 0.001]])    # Process noise
+X = array([[measurements[0]], [0], [0]])  # State vector
+H = array([[1, 0, 0]])  # Measurement matrix
+P = array([[1, 0, 0], [0, 10, 0], [0, 0, 100]])  # Estimate noise
+Q = array([[0, 0, 0], [0, 0, 0], [0, 0, 0.001]])  # Process noise
 R = 0.05 ** 2
 
 # State transition matrix
@@ -167,11 +180,7 @@ def new_plot(x, y, xAx, yAx, title: str):
 new_plot(time, xEst, "Time [s]", "Position [m]", "Position Estimate")
 new_plot(time, vEst, "Time [s]", r"Velocity [$\frac{m}{s}$]", "Velocity Estimate")
 new_plot(
-    time,
-    aEst,
-    "Time [s]",
-    r"Acceleration [$\frac{m}{s^2}$]",
-    "Acceleration Estimate"
+    time, aEst, "Time [s]", r"Acceleration [$\frac{m}{s^2}$]", "Acceleration Estimate"
 )
 plt.show()
 ```
@@ -183,3 +192,8 @@ yourself. You should get the following:
 {{< figure src="/images/programming/kalman/position-estimate.png" position="center" >}}
 {{< figure src="/images/programming/kalman/velocity-estimate.png" position="center" >}}
 {{< figure src="/images/programming/kalman/acceleration-estimate.png" position="center" >}}
+
+
+## More Complex Example
+
+_I haven't gotten around to this yet, but I will soon!_

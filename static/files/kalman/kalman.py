@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 from numpy import array, identity, loadtxt, vstack
 from numpy.linalg import inv
 
+plt.style.use("dark_background")
+
 data = loadtxt("data.txt", delimiter="\t")
 
 time = data[:, 0]
@@ -49,6 +51,7 @@ def new_plot(x, y, xAx, yAx, title: str):
     plt.xlabel(xAx)
     plt.ylabel(yAx)
     plt.title(title)
+    plt.savefig(f"{title.lower()}-estimate.png", dpi=300, transparent=True)
 
 
 new_plot(time, xEst, "Time [s]", "Position [m]", "Position Estimate")

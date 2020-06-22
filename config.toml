@@ -6,7 +6,7 @@ disqusShortname = "agentbaxx"
 
 [params]
   contentTypeName = "post"
-  themeColor = "green"
+  themeColor = "blue"
   showMenuItems = 5
   fullWidthTheme = false
   centerTheme = true
