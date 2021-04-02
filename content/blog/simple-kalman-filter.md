@@ -1,8 +1,8 @@
 ---
-title: 'Simple Kalman Filters'
-date: '2020-06-09'
-author: 'Austen LeBeau'
-cover: 'images/programming/kalman/kalman-post.jpg'
+title: "Simple Kalman Filters"
+date: "2020-06-09"
+author: "Austen LeBeau"
+cover: "images/programming/kalman/kalman-post.jpg"
 description: "A little bit about Kalman filters, how they work, what they're for, and how to use them."
 type: post
 math: true
@@ -25,8 +25,7 @@ unless you already know how the filter works you're stuck.
 I will run you through the simplest possible example in case you've never seen
 the filter before. _Then I'm going to show you what to do if the example won't
 work for you._ There's only so much that I can cover in one blog post, but I
-hope it will be enough to point you in the right direction. 
-
+hope it will be enough to point you in the right direction.
 
 ## Background
 
@@ -107,7 +106,7 @@ variables are just scalars. The subscripts are important here, and sometimes
 they're a source of confusion. Remember that the Kalman filter is a _recursive_
 algorithm. It depends on previous data to make estimates. $k|k-1$ denotes values
 from the previous time step, $k|k$ is the current iteration, and $k+1|k$ is the
-next. 
+next.
 
 _The $k+1|k$ values become $k|k-1$ values in the next iteration, not the $k|k$ values._
 
@@ -193,7 +192,7 @@ yourself. You should get the following:
 {{< figure src="/images/programming/kalman/velocity-estimate.png" position="center" >}}
 {{< figure src="/images/programming/kalman/acceleration-estimate.png" position="center" >}}
 
-
 ## More Complex Example
 
 _I haven't gotten around to this yet, but I will soon!_
+
