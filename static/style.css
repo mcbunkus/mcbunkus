@@ -1,11 +1,58 @@
+:root {
+  --nord0: #2e3440;
+  --nord1: #3b4252;
+  --nord2: #434c5e;
+  --nord3: #4c566a;
+  --nord4: #d8dee9;
+  --nord5: #e5e9f0;
+  --nord6: #eceff4;
+  --nord7: #8fbcbb;
+  --nord8: #88c0d0;
+  --nord9: #81a1c1;
+  --nord10: #5e81ac;
+  --nord11: #bf616a;
+  --nord12: #d08770;
+  --nord13: #ebcb8b;
+  --nord14: #a3be8c;
+  --nord15: #b48ead;
+  --accent: var(--nord10);
+}
 
-p {
-  /* text-align: justify !important; */
+body {
+  color: var(--nord4);
+}
+
+h1 {
+  color: var(--nord9);
+}
+
+h2 {
+  color: var(--nord8);
+}
+
+h3 {
+  color: var(--nord7);
+}
+
+h4 {
+  color: var(--nord4);
+}
+
+h5 {
+  color: var(--nord5);
+}
+
+h6 {
+  color: var(--nord6);
 }
 
 a {
   text-decoration: none;
   color: var(--accent);
+}
+
+.menu {
+  color: var(--nord10) !important;
 }
 
 .post,
@@ -17,16 +64,104 @@ a {
   border: 10px solid var(--accent);
 }
 
-
-h1, h2, h3, h4, h5, h6 {
-  color: var(--accent);
-}
-
-
 .container {
   max-width: 1280px;
 }
 
 img {
   padding: 2.5em;
+}
+
+.post-meta {
+  color: var(--nord9);
+}
+
+.section-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.section-lhs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.lhs-divider {
+  padding: 0 0.5rem;
+  color: var(--nord7);
+  font-size: larger;
+}
+
+.job {
+  color: var(--nord10);
+  font-weight: normal;
+  font-size: larger;
+}
+
+.location {
+  color: var(--nord9);
+  font-style: italic;
+  font-weight: normal;
+  font-size: large;
+}
+
+.dates {
+  color: var(--nord8);
+  font-weight: normal;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: block;
+  font-size: larger;
+  color: var(--nord9);
+}
+
+input {
+  margin-bottom: 1rem;
+  padding: 0.5rem 0.25rem;
+  font-family: inherit;
+  outline: 0;
+  background: var(--nord0);
+  border: 1px solid var(--nord1);
+  color: inherit;
+}
+
+input[type="submit"] {
+  font-size: larger;
+  align-self: flex-end;
+  padding: 0.5rem 1.5rem;
+  background-color: var(--nord10);
+}
+
+textarea {
+  margin-bottom: 1rem;
+  padding: 0.5rem 0.25rem;
+  font-family: inherit;
+  outline: 0;
+  background: var(--nord0);
+  border: 1px solid var(--nord1);
+  color: inherit;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.return-contact-info {
+  display: flex;
 }
