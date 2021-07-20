@@ -1,4 +1,11 @@
 
+.post {
+  margin-top: 0;
+}
+
+.post-title {
+  margin-top: 0 !important;
+}
 
 .section-row {
   display: flex;

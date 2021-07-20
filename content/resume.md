@@ -11,14 +11,21 @@ type: page
 
 # Engineering Experience
 
+{{< resume-section job="Software Engineer" location="Torch Technologies, Inc" dates="March 2021 - Present">}}
+
+- Develop tools for data movement, management, analysis, and simulations
+- Integrate new communication protocols for existing software packages
+- Run high fidelity missile simulations
+
+
 {{< resume-section job="Lead Software Developer" location="Remora Robotics" dates="March 2020 - March 2021">}}
 
-- Use Robot Operating System to develop software that manages the drone's subsystems
-- Integrate ROS with Ardupilot to handle basic navigation
-- Create simulation environment with Gazebo, using Blender to model assets
-- Program STM32 microcontrollers with Zephyr RTOS to interface with sensors and companion computers
-- Prototype custom circuit boards for microcontrollers and compute modules
-- Develop web applications and backend infrastructure with AWS
+- Used ROS _(Robot Operating System)_ to develop software that managed the drone's subsystems
+- Integrated ROS with Ardupilot to handle basic navigation
+- Created simulation environment with Gazebo, using Blender to model assets
+- Programed STM32 microcontrollers with Zephyr RTOS to interface with sensors and companion computers
+- Prototyped custom circuit boards for microcontrollers and compute modules
+- Developed web applications and backend infrastructure with AWS
 
 {{< resume-section job="Embedded Systems Team Lead" location="Auburn University Rocketry Association" dates="August 2018 - May 2020">}}
 
