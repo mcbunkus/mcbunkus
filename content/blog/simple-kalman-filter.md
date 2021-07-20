@@ -110,7 +110,7 @@ next.
 
 _The $k+1|k$ values become $k|k-1$ values in the next iteration, not the $k|k$ values._
 
-This is the part that confused me at first. $\hat{x}_{k|k}$ and $P_{k|k}$ are
+This is the part that confused me at first. $\hat{x}\_{k|k}$ and $P\_{k|k}$ are
 used for _predicting_ the state in the time update equations. They're not the
 actual estimate, but correct me if I'm wrong anywhere.
 
