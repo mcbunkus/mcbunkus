@@ -1,3 +1,6 @@
+:root {
+  --accent: rgb(75, 175, 113);
+}
 
 .post {
   margin-top: 0;
@@ -66,6 +69,7 @@ input[type="submit"] {
   align-self: flex-end;
   padding: 0.5rem 1.5rem;
   background-color: var(--accent);
+  color: black;
 }
 
 textarea {
