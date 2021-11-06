@@ -70,8 +70,8 @@ defines constants for pins and things like that. Theoretically you could run the
 same code and it will be the same for any other boards TinyGo supports.
 
 # Channels
-
-Here's a convoluted example of using channels.
+Here's the neat part. Channels actually work. Here's a convoluted example of
+using channels:
 
 ```go
 package main
