@@ -13,9 +13,10 @@ type: page
 
 {{< resume-section job="Software Engineer" location="Torch Technologies, Inc" dates="March 2021 - Present">}}
 
-- Develop tools for data movement, management, analysis, and simulations
-- Integrate new communication protocols for existing software packages
-- Run high fidelity missile simulations
+- Adapt tactical systems to participate in large, multi-player simulations
+- Integrate new communication protocols into existing software
+- Develop tools for data movement, management, analysis
+- Run high fidelity simulations
 
 
 {{< resume-section job="Lead Software Developer" location="Remora Robotics" dates="March 2020 - March 2021">}}
@@ -40,13 +41,12 @@ type: page
 
 # Programming
 
-- Python
 - C/C++
+- Python
 - Rust
 - Go
 - MATLAB
 - Javascript (Vue.js & React)
-- Dart (Flutter)
 - C# (Unity & Godot)
 
 # Engineering
@@ -55,11 +55,9 @@ type: page
 - Solidworks
 - Fusion 360
 - Blender
-- Kicad
+- Electrical Schematics & PCB Design (KiCad)
+- Simulink
 - OpenFOAM
 - Ansys Fluent
 - PATRAN (stress analysis)
 - LaTeX
-- Numerical Propulsion System Simulation
-- Electrical Schematics & PCB Design (KiCad)
-- Simulink

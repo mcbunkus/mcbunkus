@@ -1,9 +1,8 @@
 :root {
-  --accent: rgb(75, 175, 113);
 }
 
 .post {
-  margin-top: 0;
+  /* margin-top: 0; */
 }
 
 .post-title {

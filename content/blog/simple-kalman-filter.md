@@ -10,8 +10,7 @@ math: true
 
 {{<toc>}}
 
-I think Kalman filters are one of the most underappreciated topics in
-engineering. In my time as an aerospace undergrad, the most exposure I got was a
+In my time as an aerospace undergrad, the most exposure I got was a
 15 minute PowerPoint presentation until I took a state estimation class my
 senior year. Before then, I tried to write a filter for the apogee control
 system in Auburn's
@@ -72,17 +71,19 @@ converges to the true value.
 _Measurement Update Equations_
 
 $$
-\begin{aligned} K &= P_{k|k-1}H^T\left[HP_{k|k-1}H^T + R\right]^{-1} \\\\
-   \hat{x}_{k|k} &= \hat{x}_{k|k-1} + K\left(y_k - H\hat{x}_{k|k-1}\right) \\\\
-   P_{k|k} &= \left(I-KH\right)P_{k|k-1} \\\\
+\begin{aligned} 
+    K             &= P_{k|k-1}H^T\left[HP_{k|k-1}H^T + R\right]^{-1} \\\\
+    \hat{x}\_{k|k} &= \hat{x}\_{k|k-1} + K\left(y\_k - H\hat{x}\_{k|k-1}\right) \\\\
+    P\_{k|k}       &= \left(I-KH\right)P\_{k|k-1}
 \end{aligned}
 $$
 
 _Time Update Equations_
 
 $$
-\begin{aligned} \hat{x}\_{k+1|k} &= \Phi\hat{x}\_{k|k} \\\\
-    P_{k+1|k} &= \Phi P_{k|k} \Phi^T + Q \\\\
+\begin{aligned} 
+    \hat{x}\_{k+1|k} &= \Phi\hat{x}\_{k|k} \\\\
+    P_{k+1|k}        &= \Phi P_{k|k} \Phi^T + Q \\\\
 \end{aligned}
 $$
 
