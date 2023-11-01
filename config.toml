@@ -27,16 +27,19 @@ logoText = "Austen LeBeau"
 logoHomeLink = "/"
 
 [languages.en.menu]
+
 [[languages.en.menu.main]]
 identifier = "blog"
 name = "Blog"
 url = "/blog"
 weight = 1
+
 [[languages.en.menu.main]]
 identifier = "resume"
 name = "Resume"
 url = "/resume"
 weight = 2
+
 [[languages.en.menu.main]]
 identifier = "contact"
 name = "Contact"
