@@ -1,9 +1,3 @@
-:root {
-}
-
-.post {
-  /* margin-top: 0; */
-}
 
 .post-title {
   margin-top: 0 !important;
@@ -42,44 +36,10 @@
   font-weight: normal;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-}
 
 label {
   display: block;
   font-size: larger;
-}
-
-input {
-  margin-bottom: 1rem;
-  padding: 0.5rem 0.25rem;
-  font-family: inherit;
-  outline: 0;
-  color: inherit;
-  background-color: inherit;
-  border: 0;
-  border-bottom: 1px solid var(--accent);
-}
-
-input[type="submit"] {
-  font-size: larger;
-  align-self: flex-end;
-  padding: 0.5rem 1.5rem;
-  background-color: var(--accent);
-  color: black;
-}
-
-textarea {
-  margin-bottom: 1rem;
-  padding: 0.5rem 0.5rem;
-  font-family: inherit;
-  outline: 0;
-  color: inherit;
-  background-color: inherit;
-  border: 0;
-  border-bottom: 1px solid var(--accent);
 }
 
 .flex {
