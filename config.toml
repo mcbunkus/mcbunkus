@@ -14,16 +14,16 @@ centerTheme = true
 
 [languages]
 [languages.en]
-title = "Austen LeBeau"
-subtitle = ""
+title = "mcbunkus"
+subtitle = "general menace to society"
 keywords = ""
-copyright = "&copy; 2023 Austen LeBeau"
+copyright = "&copy; 2024 mcbunkus industries"
 menuMore = "Show more"
 readMore = "Read more"
 readOtherPosts = "Read other posts"
 
 [languages.en.params.logo]
-logoText = "Austen LeBeau"
+logoText = "mcbunkus"
 logoHomeLink = "/"
 
 [languages.en.menu]
@@ -39,9 +39,3 @@ identifier = "resume"
 name = "Resume"
 url = "/resume"
 weight = 2
-
-[[languages.en.menu.main]]
-identifier = "contact"
-name = "Contact"
-url = "/contact"
-weight = 3

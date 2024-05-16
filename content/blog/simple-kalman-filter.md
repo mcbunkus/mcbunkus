@@ -3,17 +3,18 @@ title: "Simple Kalman Filters"
 date: "2020-06-09"
 author: "Austen LeBeau"
 cover: "images/programming/kalman/kalman-post.jpg"
-description: "A little bit about Kalman filters, how they work, what they're for, and how to use them."
+description:
+  "A little bit about Kalman filters, how they work, what they're for, and how
+  to use them."
 type: post
 math: true
 ---
 
 {{<toc>}}
 
-In my time as an aerospace undergrad, the most exposure I got was a
-15 minute PowerPoint presentation until I took a state estimation class my
-senior year. Before then, I tried to write a filter for the apogee control
-system in Auburn's
+In my time as an aerospace undergrad, the most exposure I got was a 15 minute
+PowerPoint presentation until I took a state estimation class my senior year.
+Before then, I tried to write a filter for the apogee control system in Auburn's
 [USLI](https://www.nasa.gov/stem/studentlaunch/home/index.html) competition
 rocket. However, the problem I ran in to was the fact that the examples online
 didn't work in the context I needed it to. They set up the simplest possible
@@ -71,7 +72,7 @@ converges to the true value.
 _Measurement Update Equations_
 
 $$
-\begin{aligned} 
+\begin{aligned}
     K             &= P_{k|k-1}H^T\left[HP_{k|k-1}H^T + R\right]^{-1} \\\\
     \hat{x}\_{k|k} &= \hat{x}\_{k|k-1} + K\left(y\_k - H\hat{x}\_{k|k-1}\right) \\\\
     P\_{k|k}       &= \left(I-KH\right)P\_{k|k-1}
@@ -81,7 +82,7 @@ $$
 _Time Update Equations_
 
 $$
-\begin{aligned} 
+\begin{aligned}
     \hat{x}\_{k+1|k} &= \Phi\hat{x}\_{k|k} \\\\
     P_{k+1|k}        &= \Phi P_{k|k} \Phi^T + Q \\\\
 \end{aligned}
@@ -109,7 +110,8 @@ algorithm. It depends on previous data to make estimates. $k|k-1$ denotes values
 from the previous time step, $k|k$ is the current iteration, and $k+1|k$ is the
 next.
 
-_The $k+1|k$ values become $k|k-1$ values in the next iteration, not the $k|k$ values._
+_The $k+1|k$ values become $k|k-1$ values in the next iteration, not the $k|k$
+values._
 
 This is the part that confused me at first. $\hat{x}\_{k|k}$ and $P\_{k|k}$ are
 used for _predicting_ the state in the time update equations. They're not the
@@ -117,9 +119,9 @@ actual estimate, but correct me if I'm wrong anywhere.
 
 ## Simplest Example
 
-Here's a simple 3-state example. The measurements are for an airplane flying downrange in
-straight and level unaccelerated flight. It is not accelerating or changing
-course, so the acceleration should be zero and the velocity constant.
+Here's a simple 3-state example. The measurements are for an airplane flying
+downrange in straight and level unaccelerated flight. It is not accelerating or
+changing course, so the acceleration should be zero and the velocity constant.
 
 ```python
 # Make sure you have python3, numpy, and matplotlib installed!
@@ -186,8 +188,8 @@ plt.show()
 ```
 
 [Here](/files/kalman/data.txt) is the data file for the filter, and a
-[copy](/files/kalman/kalman.py) of the Python file if you want to download it and try it
-yourself. You should get the following:
+[copy](/files/kalman/kalman.py) of the Python file if you want to download it
+and try it yourself. You should get the following:
 
 {{< figure src="/images/programming/kalman/position-estimate.png" position="center" >}}
 {{< figure src="/images/programming/kalman/velocity-estimate.png" position="center" >}}
@@ -196,4 +198,3 @@ yourself. You should get the following:
 ## More Complex Example
 
 _I haven't gotten around to this yet, but I will soon!_
-
