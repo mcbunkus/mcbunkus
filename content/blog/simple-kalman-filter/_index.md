@@ -1,7 +1,7 @@
 ---
 title: "Simple Kalman Filters"
 date: "2020-06-09"
-featuredImage: "/images/programming/kalman/kalman-post.jpg"
+featuredImage: "kalman-feature.jpg"
 description:
   "A little bit about Kalman filters, how they work, what they're for, and how
   to use them."
@@ -43,7 +43,7 @@ You might be wondering, why not just use a sensor to measure something directly?
 Slap an altimeter on a plane and boom, you have its altitude. Why do you need to
 "estimate" the altitude? The problem is sensors are noisy.
 
-{{< figure src="images/programming/kalman/sensor-noise.png" >}}
+{{< figure src="sensor-noise.png" >}}
 
 Here's an example of noisy sensor measurements (conveniently coupled with the
 Kalman filter's estimate). Also sometimes you can't measure a state directly.
@@ -192,9 +192,9 @@ plt.show()
 [copy](/files/kalman/kalman.py) of the Python file if you want to download it
 and try it yourself. You should get the following:
 
-{{< figure src="/images/programming/kalman/position-estimate.png" >}}
-{{< figure src="/images/programming/kalman/velocity-estimate.png" >}}
-{{< figure src="/images/programming/kalman/acceleration-estimate.png" >}}
+{{< figure src="position-estimate.png" >}}
+{{< figure src="velocity-estimate.png" >}}
+{{< figure src="acceleration-estimate.png" >}}
 
 ## More Complex Example
 
