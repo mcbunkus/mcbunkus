@@ -7,7 +7,7 @@ description:
   to use them."
 tags: ["math"]
 type: post
-math: true
+katex: true
 ---
 
 

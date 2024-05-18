@@ -2,11 +2,13 @@
 title: 'TinyGo'
 date: '2020-06-08'
 author: 'Austen LeBeau'
-cover: 'images/programming/tinygo-logo.png'
+featuredImage: 'tinygo-logo.png'
 description: 'An introduction to TinyGo.'
 type: post
 tags: ['go', 'tinygo']
 ---
+
+{{< figure src="tinygo-logo.png" >}}
 
 _Article is a work in progress._
 
