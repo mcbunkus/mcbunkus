@@ -38,15 +38,11 @@ My PCB design software of choice is [[KiCad]], and his videos for making an [[ST
 ![[stm32-prototype-schematic.png]]  
 _Praise be upon St. Phil_
 
-I haven't added the sensors and peripherals I want to add yet, my intent for  
-this board is to get my feet wet again with KiCad, and to go through the process  
-of ordering PCBs. I've also never made a board this complicated that didn't  
-fail… so I want this one to work correctly before I add the rest of the parts.  
-I still need to add:
+I haven't added the sensors and peripherals I want to add yet, my intent for this board is to get my feet wet again with KiCad, and to go through the process of ordering PCBs. I've also never made a board this complicated that didn't fail… so I want this one to work correctly before I add the rest of the parts. I still need to add:
 
 - A BMP280
 - A MPU-6050
-- Header pins for servos and/or generic GPIO
+- Header pins for servos and/or generic [[GPIO]]
 - Battery terminals/connectors
 - A separate 5V regulator for servos
 
@@ -59,4 +55,4 @@ it is something, I tell ya what. I probably shouldn't route the USB lines under 
 
 I originally intended to use [[Zephyr]] as my framework for Sparrow. I don't want to use Arduino since this project is partly to get out of my comfort zone. I've used Zephyr a long time ago, and I've written some prototype code that reads the BMP280 and MPU-6050 and writes the data to serial. It's a great framework, but I've been thinking that I want to get my hands a little bit dirtier, so since I haven't gotten very far with development yet, I'm making the switch to libopencm3.
 
-Once I use [[libopencm3]] to chisel some code down onto the chip, I'll post a link to my GitHub repo if you're interested. I have no idea what I'm doing, so set your expectations low:).
+Once I use [[LibOpenCM3]] to chisel some code down onto the chip, I'll post a link to my GitHub repo if you're interested. I have no idea what I'm doing, so set your expectations low:).
