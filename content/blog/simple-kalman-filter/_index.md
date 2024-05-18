@@ -10,6 +10,7 @@ type: post
 katex: true
 ---
 
+{{< figure src="kalman-feature.png" >}}
 
 {{<toc>}}
 

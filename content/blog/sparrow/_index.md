@@ -8,7 +8,7 @@ description: "Oh god he's making rockets again."
 tags: ["sparrow", "embedded", "cad", "pcb"]
 ---
 
-{{< figure src="sparrow-prototype.jpg" >}}
+{{< figure src="sparrow-model.png" >}}
 
 {{<toc>}}
 
