@@ -16,8 +16,8 @@ type: page
 - Adapt tactical systems to participate in large, multi-player simulations
 - Integrate new communication protocols into existing software
 - Develop tools for data movement, management, analysis
-- Developed and maintained daemons deployed across multiple machines
-- Implemented TCP and UDP sockets for sending/receiving messages and translating between protocols
+- Develop and maintain daemons deployed across multiple machines
+- Implement TCP and UDP sockets for sending/receiving messages and translating between protocols
 - Execute high fidelity simulations
 
 {{< resume-section job="Lead Software Developer" location="Remora Robotics" dates="March 2020 - March 2021">}}
