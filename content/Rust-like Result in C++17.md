@@ -1,3 +1,8 @@
+---
+tags:
+  - programming/snippets
+---
+
 Here's a snippet for replicating [[Rust]]'s `Result` enum as closely as possible in [[C++]]17+
 
 ```c++
