@@ -1,11 +1,11 @@
 ---
 title: "Simple Kalman Filters"
 date: "2020-06-09"
-author: "Austen LeBeau"
-cover: "images/programming/kalman/kalman-post.jpg"
+featuredImage: "/images/programming/kalman/kalman-post.jpg"
 description:
   "A little bit about Kalman filters, how they work, what they're for, and how
   to use them."
+tags: ["math"]
 type: post
 math: true
 ---

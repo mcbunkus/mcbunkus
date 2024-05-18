@@ -1,0 +1,64 @@
+title = "mcbunkus"
+baseurl = "https://mcbunkus.github.io/"
+languageCode = "en-us"
+theme = "hugo-coder"
+enableEmoji = true
+paginate = 20
+
+[params]
+author = "mcbunkus"
+info = "menace to society"
+description = "unmaintained and infrequently updated chronicles of my shenanigans"
+keywords = "blog,developer,personal"
+avatarurl = "images/avatar.png"
+since = 2020
+dateFormat = "January 2, 2006"
+
+enableTwemoji = true
+colorScheme = "auto"
+
+customCSS = ["css/style.css"]
+
+[taxonomies]
+tag = "tags"
+category = "categories"
+series = "series"
+author = "authors"
+
+[[params.social]]
+name = "Github"
+url = "https://github.com/mcbunkus"
+icon = "fa-brands fa-github fa-2x"
+weight = 1
+
+[[params.social]]
+name = "Spotify"
+icon = "fa-brands fa-spotify fa-2x"
+weight = 2
+url = "https://open.spotify.com/user/austenlebeau?si=8a233f99bc684605"
+
+[[params.social]]
+name = "LinkedIn"
+icon = "fa-brands fa-linkedin fa-2x"
+weight = 3
+url = "https://www.linkedin.com/in/austen-lebeau/"
+
+
+[[params.social]]
+name = "RSS"
+icon = "fa-solid fa-rss fa-2x"
+weight = 6
+url = "https://mcbunkus.github.io/index.xml"
+rel = "alternate"
+type = "application/rss+xml"
+
+[[menu.main]]
+identifier = "blog"
+name = "blog"
+url = "/blog"
+
+[[menu.main]]
+identifier = "resume"
+name = "resume"
+url = "/resume"
+
