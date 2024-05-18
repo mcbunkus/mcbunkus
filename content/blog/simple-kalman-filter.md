@@ -10,6 +10,7 @@ type: post
 math: true
 ---
 
+
 {{<toc>}}
 
 In my time as an aerospace undergrad, the most exposure I got was a 15 minute
