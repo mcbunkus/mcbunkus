@@ -1,5 +1,5 @@
 title = "mcbunkus"
-baseurl = "/"
+baseurl = "https://mcbunkus.github.io/mcbunkus/"
 languageCode = "en-us"
 theme = "hugo-coder"
 enableEmoji = true
