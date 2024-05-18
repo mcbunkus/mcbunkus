@@ -43,7 +43,7 @@ For the micro-controller I'm using an STM32F103C8T6, for the same reasons as the
 sensors. Funnily enough this is my first time really using the Blue Pill, I've
 used Feathers, Nucleos and normal Arduinos but I never used the Blue Pill.
 
-{{< figure src="/images/electronics/sparrow/sparrow-prototype.jpg" caption="Breadboard prototype from right to left: STM32F103C8T6 (Blue Pill), SD card breakout, MPU-6050, and BMP280. Sensors are connected via I2C." >}}
+{{< figure src="mcbunkus/images/electronics/sparrow/sparrow-prototype.jpg" caption="Breadboard prototype from right to left: STM32F103C8T6 (Blue Pill), SD card breakout, MPU-6050, and BMP280. Sensors are connected via I2C." >}}
 
 It's been a very, _very_ long time since I've designed a circuit board. I've
 been watching some of Phil's Lab's videos to relearn PCB design. If you haven't
@@ -54,7 +54,7 @@ My PCB design software of choice is KiCad, and his videos for making an STM32
 are incredibly helpful. Here's my initial schematic for Sparrow (it's just a
 copy from his videos, honestly):
 
-{{< figure src="/images/electronics/sparrow/stm32-prototype-schematic.png" caption="Praise be upon St. Phil" >}}
+{{< figure src="mcbunkus/images/electronics/sparrow/stm32-prototype-schematic.png" caption="Praise be upon St. Phil" >}}
 
 I haven't added the sensors and peripherals I want to add yet, my intent for
 this board is to get my feet wet again with KiCad, and to go through the process
@@ -70,7 +70,7 @@ I still need to add:
 
 I also needed to practice laying out the board, because...
 
-{{< figure src="/images/electronics/sparrow/stm32-prototype-board.png" >}}
+{{< figure src="mcbunkus/images/electronics/sparrow/stm32-prototype-board.png" >}}
 
 it is something, I tell ya what. I probably shouldn't route the USB lines under
 the voltage regulator. Since my initial rockets will be printed, I'm constrained
